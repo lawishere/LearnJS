@@ -1,0 +1,58 @@
+<html>
+<head>
+  <title>UTC to Localtime</title>
+  <script type="text/javascript">
+
+  function onEditUTC() {
+    var d = new Date(document.getElementById("utc").value * 1000);
+
+    // d.setUTCSeconds(utc);
+    document.getElementById("year").value = d.getFullYear();
+    document.getElementById("month").value = d.getMonth() + 1;
+    document.getElementById("mday").value = d.getDay();
+    document.getElementById("hours").value = d.getHours();
+    document.getElementById("minutes").value = d.getMinutes();
+    document.getElementById("secondes").value = d.getSeconds();
+
+      document.getElementById("d").value = d.getFullYear() + "/" + "2" +  "/" + d.getDay();
+
+    alert(d.toString());
+
+    // document.write(d)
+
+  }
+
+  // var d = Date.UTC(2005,7,8)
+  // document.write(d)
+  //
+  // 输出：
+  // 1123459200000
+  // 例子 2
+  // 现在，我们将改造上面的例子，使得输出转换为年：
+  // <script type="text/javascript">
+  //
+  // var minutes = 1000 * 60
+  // var hours = minutes * 60
+  // var days = hours * 24
+  // var years = days * 365
+  // var t = Date.UTC(2005,7,8)
+  // var y = t/years
+  // document.write("It's been: " + y + " years from 1970/01/01")
+  // document.write(" to 2005/07/08!")
+
+  </script>
+</head>
+<body>
+  <input id="utc" onchange="onEditUTC()"/>
+  <input id="year" />
+  <input id="month" />
+  <input id="mday" />
+  <input id="hours" />
+  <input id="minutes" />
+  <input id="secondes" />
+  <br>
+  <input type="date" id="d" />
+  <input type="time" id="t" />
+
+</body>
+</html>
